@@ -98,6 +98,8 @@ Public Class FRMEditor
         End If
         LBLAboutVersion.Text += " by RSAStudioGames"
 
+
+
         'Setting ToolStrip renderers
         MNUMain.Renderer = CustomToolStripRenderer
         StatusBar.Renderer = CustomToolStripRenderer
@@ -1344,9 +1346,6 @@ Public Class FRMEditor
                                                   extension))
             Loop While File.Exists(filePath)
         End If
-
-        Me.SaveMap.FileName = ActiveMap.MapTitle
-
         Return filePath
     End Function
 
@@ -1356,12 +1355,11 @@ Public Class FRMEditor
         'Need to get this working properly so it doesnt just save to autosavedmap.camm and maybe get it working
         'so it has its own autosave folder and then a new filename for every new autosave. Something where
         'it checks if there is a file with so and so name and then goes up to the next number or something.
-
+        Dim FileIncrementCounter As Integer = 1
         If AutosaveTimer.Interval Then
             Me.SaveMap.FileName = ActiveMap.MapTitle
-        Else
-            Me.SaveMap.FileName = "ASM_v.camm"
         End If
+
     End Sub
 
     Private Sub CBOLevel_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBOLevel.SelectedIndexChanged
