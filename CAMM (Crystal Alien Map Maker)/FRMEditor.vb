@@ -307,7 +307,7 @@ Public Class FRMEditor
     Dim IntroX, IntroY, sIntro1_width, sIntro2_width, sIntro3_width As Integer
     Dim sIntro1 As String = "Welcome to CAMM!"
     Dim sIntro2 As String = "Crystal Alien Map Maker"
-    Dim sIntro3 As String = "By RSAStudioGames"
+    Dim sIntro3 As String = "Fork By RSAStudioGames"
     Sub DrawIntro(ByRef g As Graphics)
         sIntro1_width = g.MeasureString(sIntro1, IntroFont).Width
         sIntro2_width = g.MeasureString(sIntro2, IntroFont2).Width
@@ -881,7 +881,7 @@ Public Class FRMEditor
         If ActiveMap.MapTitle <> "" Then
             Me.SaveMap.FileName = ActiveMap.MapTitle
         Else
-            Me.SaveMap.FileName = "Map1.camm"
+            Me.SaveMap.FileName = "newmap.camm"
         End If
         Me.SaveMap.Filter = "CAMM Map Files|*.camm|All Files|*.*"
         Me.SaveMap.FilterIndex = 1
